@@ -1,0 +1,83 @@
+#部署节点的配置文件
+path: /home/js/soft/mybee
+
+cluster:
+  - name: node1
+    bootnode:
+      - /dnsaddr/bootnode.ethswarm.org
+    bootnode-mode: true
+    api-addr: :1533
+    debug-api-addr: :1535
+    p2p-addr: :1534
+    clef-signer-enable: false
+    data-dir:
+    swap-enable: true
+    swap-endpoint: ws://localhost:8546
+    full-node: true
+    verbosity: trace
+    welcome-message: "welcom to js bee"
+    debug-api-enable: true
+
+  - name: node2
+    bootnode:
+      - /dnsaddr/bootnode.ethswarm.org
+    bootnode-mode: true
+    api-addr: :1633
+    debug-api-addr: :1635
+    p2p-addr: :1634
+    clef-signer-enable: false
+    data-dir:
+    swap-enable: true
+    swap-endpoint: ws://localhost:8546
+    full-node: true
+    verbosity: trace
+    welcome-message: "welcom to js bee"
+    debug-api-enable: true
+
+  - name: node3
+    bootnode:
+      - /dnsaddr/bootnode.ethswarm.org
+    bootnode-mode: true
+    api-addr: :1733
+    debug-api-addr: :1735
+    p2p-addr: :1734
+    clef-signer-enable: false
+    data-dir:
+    swap-enable: true
+    swap-endpoint: ws://localhost:8546
+    full-node: true
+    verbosity: trace
+    welcome-message: "welcom to js bee"
+    debug-api-enable: true
+
+  - name: node4
+    bootnode:
+      - /dnsaddr/bootnode.ethswarm.org
+    bootnode-mode: true
+    api-addr: :1833
+    debug-api-addr: :1835
+    p2p-addr: :1834
+    clef-signer-enable: false
+    data-dir:
+    swap-enable: true
+    swap-endpoint: ws://localhost:8546
+    full-node: true
+    verbosity: trace
+    welcome-message: "welcom to js bee"
+    debug-api-enable: true
+
+  - name: node5
+    bootnode:
+      - /dnsaddr/bootnode.ethswarm.org
+    bootnode-mode: true
+    api-addr: :1933
+    debug-api-addr: :1935
+    p2p-addr: :1934
+    clef-signer-enable: false
+    data-dir:
+    swap-enable: true
+    swap-endpoint: ws://localhost:8546
+    full-node: true
+    verbosity: trace
+    welcome-message: "welcom to js bee"
+    debug-api-enable: true
