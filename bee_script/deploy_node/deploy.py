@@ -45,6 +45,7 @@ def make_yaml(path, info):
     """
     file = f"{path}/bee.yaml"
     del info['name']
+    info['data-dir'] = f"{path}/.bee"
     print(f"正在生成bee.yaml 文件.....")
     with open(file, "w", encoding="utf-8") as f:
         yaml.dump(info, f)
