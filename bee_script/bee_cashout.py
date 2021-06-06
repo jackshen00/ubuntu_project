@@ -6,7 +6,8 @@ import time
 DEBUG_API = 'http://localhost:1635'
 MIN_AMOUNT = 1000
 
-
+# 访问 http://localhost:1635/chequebook/cheque
+# 获取 lastcheques 数组中的 peer 字段
 def getPeers():
     cheque_url = f"{DEBUG_API}/chequebook/cheque"
     rtn_content = requests.get(cheque_url).json()
@@ -19,7 +20,12 @@ def getPeers():
 
 
 def getCumulativePayout(peer):
-    cheque_url = "%s/chequebook/cheque/%s" % (DEBUG_API, peer)
+    """
+    访问 http://localhost:1635/chequebook/cheque/{peer}
+    :param peer:
+    :return: payout
+    """
+    cheque_url = f"{DEBUG_API}/chequebook/cheque/{peer}"
     rtn_content = requests.get(cheque_url).json()
     # print(rtn_content)
     lastreceived = rtn_content.get('lastreceived')
@@ -33,7 +39,12 @@ def getCumulativePayout(peer):
 
 
 def getLastCashedPayout(peer):
-    cashout_url = "%s/chequebook/cashout/%s" % (DEBUG_API, peer)
+    """
+    访问 http://localhost:1635/chequebook/cashout/{peer}
+    :param peer:
+    :return:
+    """
+    cashout_url = f"{DEBUG_API}/chequebook/cashout/{peer}"
     rtn_content = requests.get(cashout_url).json()
     cashout = rtn_content.get('cumulativePayout')
     # print(rtn_content)
@@ -84,6 +95,7 @@ def cashoutAll(minAmount):
         if uncashedAmount > minAmount:
             print("uncashed cheque for %s %s uncashed" % (peer, str(uncashedAmount)))
             cashout(peer)
+    print("end")
 
 
 if __name__ == '__main__':
