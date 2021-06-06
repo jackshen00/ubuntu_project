@@ -6,6 +6,10 @@ import yaml
 
 
 def _get_config():
+    """
+    使用时将cluster-sample.yaml 改为 cluster.yaml
+    :return:
+    """
     directory = pathlib.Path().resolve()
     file_name = 'cluster.yaml'
     file_path = os.path.join(directory, file_name)
